@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Category>
+@{
+    ViewData["Title"] = "Awesome Forum - Home";
+}
+
+<div class="row container-content">
+    <div class="col-md-10 offset-1">
+        <div class="bs-component forum-categories">
+            <table class="table listing-table">
+                @foreach (var category in Model)
+                {
+                    <thead>
+                        <tr>
+                            <th>@category.name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var forum in category.forums)
+                        {
+                            <tr>
+                                <td>
+                                    <a asp-controller="Forum" asp-action="Details" asp-route-id="@forum.id">@forum.name</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                }
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,34 @@
+﻿@model AppUser
+<div class="row container-content">
+    <div class="col col-md-6 offset-3">
+        <table>
+            <tr>
+                <td>
+                    <div class="text-info"><i>Username:</i></div>
+                </td>
+                <td>
+                    @Model.UserName
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="text-info"><i>Nr Mesaje:</i></div>
+                </td>
+                <td>
+                    @Model.nrOfMessages
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <a asp-controller="Forum" asp-action="UserTopics" asp-route-id="@Model.Id" class="text-info">Lista topicuri</a>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <a asp-controller="Account" asp-action="ChangePassword" class="text-info">Schimba parola</a>
+                </td>
+            </tr>
+        </table>
+        <hr />
+    </div>
+</div>

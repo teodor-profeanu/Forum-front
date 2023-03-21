@@ -1,0 +1,139 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+  width: 100vw;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+  background-color: #FDF5E6;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px; /* Vertically center the text there */
+}
+
+.listing-table th {
+    background-color: #13138a;
+    color: #FDF5E6;
+}
+
+.listing-table td {
+    background-color: #76dfca;
+    color: #53504b;
+}
+
+.listing-table td:hover {
+    background-color: #3bd1b3;
+}
+
+.forum-categories td {
+    background-color: #19A4E1;
+    color: #196EE1;
+}
+
+.forum-categories td:hover {
+    background-color: #4BB4E3;
+}
+
+.listing-table td a {
+    text-decoration: none;
+    color: #53504b;
+    font-weight: bold;
+}
+
+.listing-table td a:hover {
+    color:#FDF5E6;
+}
+
+navbar .nav-link {
+    color: #53504b;
+}
+
+navbar .nav-link:hover {
+    font-weight: bold;
+}
+
+.main {
+    position: relative;
+}
+
+.btn-info.btn-new {
+    background-color: #3bd1b3;
+    position:absolute;
+    top:0;
+    right:0;
+}
+
+.btn-info.btn-new:hover {
+    background-color: #35BCA1;
+}
+
+.container-content {
+    margin-top: 50px;
+}
+
+.topic-message {
+    margin-bottom:30px;
+    background: #eee;
+    box-shadow: 0 8px 8px -4px lightblue;
+}

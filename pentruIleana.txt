@@ -1,0 +1,39 @@
+>> get categories
+>> localhost:8080/categories
+>> [{"id":1,"name":"Administrative","orderNr":1,"forums":[{"id":1,"name":"Rules & announcements","orderNr":1,"categoryId":1},{"id":2,"name":"Welcome","orderNr":2,"categoryId":1}]},{"id":2,"name":"IT Talks","orderNr":2,"forums":[{"id":3,"name":"Software","orderNr":1,"categoryId":2},{"id":4,"name":"Hardware","orderNr":2,"categoryId":2},{"id":5,"name":"DevOps","orderNr":3,"categoryId":2}]},{"id":3,"name":"Random","orderNr":3,"forums":[{"id":6,"name":"Fashion","orderNr":1,"categoryId":3},{"id":7,"name":"Political talk","orderNr":2,"categoryId":3}]}]
+
+>> post register
+>> localhost:8080/user/register?email=teo@gmail.com&username=asmo_192&password=123&repeatPassword=123
+>> {"id":1,"username":"asmo_192","password":"123","email":"teo@gmail.com","nrOfMessages":0,"nrOfTopics":0}
+
+>> post login
+>> localhost:8080/user/login?username=asmo_192&password=123 ??
+>> {"id":1,"username":"asmo_192","password":"123","email":"teo@gmail.com","nrOfMessages":0,"nrOfTopics":0} OK
+
+>> get user by id
+>> localhost:8080/user?id=2
+>> {"id":2,"username":"ileana","password":"qwerty","email":"ileana@gmail.com","nrOfMessages":0,"nrOfTopics":0}
+
+>> post change password
+>> localhost:8080/user/change-password?id=1&oldPassword=123&newPassword=1234 OK
+>> true
+
+>> get forum by id
+>> localhost:8080/forum?id=3
+>> {"id":3,"name":"Software","orderNr":1,"categoryId":2,"topics":[{"id":1,"name":"All about React","userId":1,"user":{"id":1,"username":"asmo_192","password":"1234","email":"teo@gmail.com","nrOfMessages":0,"nrOfTopics":0},"forumId":3,"dateCreated":"2023-01-18","lastPosted":"2023-01-18","messageCount":1,"messages":null}]}
+
+>> get topic by userId
+>> localhost:8080/topic/user?id=1
+>> [{"id":1,"name":"All about React","userId":1,"user":{"id":1,"username":"asmo_192","password":"1234","email":"teo@gmail.com","nrOfMessages":0,"nrOfTopics":0},"forumId":3,"dateCreated":"2023-01-18","lastPosted":"2023-01-18","messageCount":2,"messages":null},{"id":2,"name":"OpenGL Magic","userId":1,"user":{"id":1,"username":"asmo_192","password":"1234","email":"teo@gmail.com","nrOfMessages":0,"nrOfTopics":0},"forumId":3,"dateCreated":"2023-01-18","lastPosted":"2023-01-18","messageCount":1,"messages":null}]
+
+post topic
+localhost:8080/topic/new?userId=1&forumId=3&name=All about React&message=Hey I'm new to React actually, I have no new information to give you.
+{"id":1,"name":"All about React","userId":1,"user":{"id":1,"username":"asmo_192","password":"1234","email":"teo@gmail.com","nrOfMessages":0,"nrOfTopics":0},"forumId":3,"dateCreated":"2023-01-18","lastPosted":"2023-01-18","messageCount":1,"messages":[{"id":1,"text":"Hey I'm new to React actually, I have no new information to give you.","userId":1,"user":{"id":1,"username":"asmo_192","password":"1234","email":"teo@gmail.com","nrOfMessages":0,"nrOfTopics":0},"topicId":1,"dateCreated":"2023-01-18","lastEdited":"2023-01-18"}]}
+
+post message
+localhost:8080/message/new?userId=2&topicId=1&message=This topic is useless!!
+{"id":1,"name":"All about React","userId":1,"user":{"id":1,"username":"asmo_192","password":"1234","email":"teo@gmail.com","nrOfMessages":0,"nrOfTopics":0},"forumId":3,"dateCreated":"2023-01-18","lastPosted":"2023-01-18","messageCount":2,"messages":[{"id":1,"text":"Hey I'm new to React actually, I have no new information to give you.","userId":1,"user":{"id":1,"username":"asmo_192","password":"1234","email":"teo@gmail.com","nrOfMessages":0,"nrOfTopics":0},"topicId":1,"dateCreated":"2023-01-18","lastEdited":"2023-01-18"},{"id":2,"text":"This topic is useless!!","userId":2,"user":{"id":2,"username":"ileana","password":"qwerty","email":"ileana@gmail.com","nrOfMessages":0,"nrOfTopics":0},"topicId":1,"dateCreated":"2023-01-18","lastEdited":"2023-01-18"}]}
+
+get topic by topicId
+localhost:8080/topic?id=1
+{"id":1,"name":"All about React","userId":1,"user":{"id":1,"username":"asmo_192","password":"1234","email":"teo@gmail.com","nrOfMessages":0,"nrOfTopics":0},"forumId":3,"dateCreated":"2023-01-18","lastPosted":"2023-01-18","messageCount":2,"messages":[{"id":1,"text":"Hey I'm new to React actually, I have no new information to give you.","userId":1,"user":{"id":1,"username":"asmo_192","password":"1234","email":"teo@gmail.com","nrOfMessages":0,"nrOfTopics":0},"topicId":1,"dateCreated":"2023-01-18","lastEdited":"2023-01-18"},{"id":2,"text":"This topic is useless!!","userId":2,"user":{"id":2,"username":"ileana","password":"qwerty","email":"ileana@gmail.com","nrOfMessages":0,"nrOfTopics":0},"topicId":1,"dateCreated":"2023-01-18","lastEdited":"2023-01-18"}]}

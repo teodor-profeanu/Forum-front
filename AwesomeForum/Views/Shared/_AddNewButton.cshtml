@@ -1,0 +1,11 @@
+﻿@model string[]
+@if (User.Identity.IsAuthenticated)
+{
+<div class="row">
+    <div class="col-md-12">
+        <a asp-controller="@Model[0]" asp-action="Create" asp-route-id="@Model[1]" class="btn btn-info btn-new">
+            <i class="bi bi-plus-circle">New @Model[0]</i>
+        </a>
+    </div>
+</div>   
+}
